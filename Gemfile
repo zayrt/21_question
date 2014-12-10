@@ -4,7 +4,12 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+
+gem 'mongoid', '~> 4.0.0'
+gem 'bson_ext'
+gem 'mongoid-grid_fs', git: 'https://github.com/ahoward/mongoid-grid_fs.git'
+gem 'mongoid_search', git: 'https://github.com/mauriciozaffari/mongoid_search.git'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets

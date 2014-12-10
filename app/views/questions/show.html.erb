@@ -1,0 +1,8 @@
+<h1>Questions: <%= @question.question %></h1>
+<%= form_for Vote.new do |f| %>
+	<% for a in @reponses %>
+		<p><%= a.answer%> <br>
+       	<%= check_box_tag 'answer_id', a.id %><br>
+	<% end %>
+	<%= f.submit class: "btn btn-large btn-primary" %>
+<% end %>

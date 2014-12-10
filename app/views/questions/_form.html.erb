@@ -1,0 +1,46 @@
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+        $('#add_input').click(function()
+        {
+        	var c = $("#to_change input:last").clone();
+            var value = "question[answer" + $("#to_change input").length + "]";
+            c.attr("name", value)
+            $("#to_change").append('<br>');
+            $("#to_change").append(c);
+        });
+        $('#remove_input').click(function()
+        {
+        	if ($("#to_change input").length > 1) {
+        		$("#to_change input:last").remove();
+        		$("#to_change br:last").remove();
+        	}
+        });
+    });
+</script> 
+<%= form_for :question, url: questions_path do |f| %>
+	<div style="width: 25%;">
+	<p>
+		<%= f.label :question %><br>
+		<%= f.text_field :question, class: "form-control" %>
+	</p>
+	<p>
+		<%= f.label :result_type %><br>
+		<%= f.select :result_type, ["binaire", "QCM", "QCU"], {}, class: "form-control" %>
+	</p>
+	<p id="to_change">
+		<%= f.label :answer %><br>
+		<%= f.text_field :answer, class: "form-control" %>
+	</p>
+		
+	<p>
+		<%= f.submit class: "btn btn-large btn-primary" %>
+		<button id="add_input" type="button" class="btn btn-default btn-lg">
+			<span class="glyphicon glyphicon-plus-sign" ></span>
+		</button>
+		<button id="remove_input" type="button" class="btn btn-default btn-lg" >
+			<span class="glyphicon glyphicon-minus-sign" ></span>
+		</button>
+	</p>
+  </div>
+<% end %>

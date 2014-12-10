@@ -1,0 +1,11 @@
+<table>
+		<h1>Votez !</h1>
+		<% for a in @question %>
+			<div><%= a.question %> <%= link_to "Votez", question_path(a) %></div>
+		<% end %>
+</table>
+<h1>Vos votes</h1>
+<% for v in @votes %>
+	<% vote = Answer.find(v.answer_id) %>
+	<p><%= vote.answer %></p>
+<% end %>

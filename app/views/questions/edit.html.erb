@@ -1,0 +1,14 @@
+<h1>Editing Question</h1>
+<%= form_for :question, url: question_path(@question), method: :patch do |f| %>
+  <p>
+    <%= f.label :question %><br>
+    <%= f.text_field :question %>
+  </p>
+   <p>
+	    <%= f.label :result_type %><br>
+		<%= f.select :result_type, ["binaire", "QCM", "QCU"] %>
+	</p>
+  <p>
+    <%= f.submit class: "btn btn-large btn-primary"%>
+  </p>
+<% end %>
