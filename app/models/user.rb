@@ -27,6 +27,16 @@ class User
   field :last_sign_in_ip, 							type: String
   field :created_at, 										type: DateTime
   field :updated_at, 										type: DateTime
+  field :username,                      type: String
+  field :firstname,                     type: String
+  field :lastname,                      type: String
+  field :town,                          type: String
+  field :country,                          type: String
+  field :sex,                           type: String
+  field :birthday,                      type: DateTime
+  
+  acts_as_token_authenticatable
+  field :authentication_token
 
   has_many :questions, dependent: :destroy
   has_many :votes, dependent: :destroy

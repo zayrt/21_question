@@ -12,6 +12,20 @@
   <div><%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
 
+  <div><%= f.label :username %><br />
+  	<%= f.email_field :username, autofocus: true %></div>
+
+  <div><%= f.label :firstname %><br />
+  	<%= f.email_field :firstname, autofocus: true %></div>
+
+  <div><%= f.label :lastname %><br />
+  	<%= f.email_field :lastname, autofocus: true %></div>
+
+  <div><%= f.label :homme %><br />
+  <%= f.check_box :sex %></div>
+  <div><%= f.label :femme %><br />
+  <%= f.check_box :sex %></div>
+
   <div><%= f.submit "Sign up" %></div>
 <% end %>
 

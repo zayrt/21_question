@@ -1,0 +1,5 @@
+<% if @user.nil? %>
+	<h1>Give token please</h1>
+<% else %>
+ 	<h1><%= @user.email %></h1>
+<% end %>

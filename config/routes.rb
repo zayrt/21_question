@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   
   root 'page#index'
   get 'page/vote' => 'page#vote'
+  get 'page/test' => 'page#test'
   resources :votes
   resources :questions
 
